@@ -12,7 +12,8 @@ class Settings(BaseSettings):
     BUCKET_REGION: str
 
     class Config:
-        env_file = ".env"
+        env_file = "../../.env"
+        extra = "allow"
 
 
 settings = Settings()
