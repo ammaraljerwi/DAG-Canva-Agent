@@ -1,0 +1,17 @@
+[project]
+name = "pythonbackend"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "boto3>=1.38.40",
+    "fastapi[standard]>=0.115.12",
+    "httpx>=0.28.1",
+    "jinja2>=3.1.6",
+    "openai-agents[viz]>=0.0.18",
+    "pydantic>=2.11.5",
+    "pyjwt[crypto]>=2.10.1",
+    "requests>=2.32.4",
+    "sqlalchemy>=2.0.41",
+]

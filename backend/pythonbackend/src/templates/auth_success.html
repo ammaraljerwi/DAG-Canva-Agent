@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Authorization Success</title>
+  </head>
+  <body>
+    <p>
+      Successfully authorized! This window will close automatically in <span id="countdown">{{ countdownSecs }}</span> seconds.
+    </p>
+    <script>
+      const countdownSecs = {{ countdownSecs }};
+      const AUTHORIZATION_SUCCESS_MESSAGE = "{{ message }}";
+
+      let countdown = countdownSecs;
+      const interval = setInterval(() => {
+        countdown--;
+        document.getElementById('countdown').textContent = countdown;
+        if (countdown <= 0) {
+          clearInterval(interval);
+        }
+      }, 1000);
+
+      const postMessageAndClose = () => {
+        if (window.opener) {
+          window.opener.postMessage(AUTHORIZATION_SUCCESS_MESSAGE, "*");
+        }
+        window.close();
+      };
+
+      setTimeout(postMessageAndClose, countdownSecs * 1000);
+
+      window.addEventListener('beforeunload', postMessageAndClose);
+    </script>
+  </body>
+</html>
