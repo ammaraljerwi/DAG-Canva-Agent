@@ -1,0 +1,11 @@
+.DS_Store
+.env
+.idea
+.ssl
+*.log*
+**/*/db.json
+**/*/app.db
+**/*/*.jpg
+**/*/*.png
+dist
+node_modules

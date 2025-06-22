@@ -1,0 +1,116 @@
+/* Scroll container */
+.scrollContainer {
+  box-sizing: border-box;
+  overflow-y: scroll;
+  height: 100%;
+  padding-top: var(--ui-kit-space-2);
+  padding-right: var(--ui-kit-space-2);
+  padding-bottom: var(--ui-kit-space-2);
+
+  /* for firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--ui-kit-color-typography-quaternary) transparent;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  position: absolute;
+  width: var(--ui-kit-base-unit);
+  height: 0;
+}
+
+.scrollContainer::-webkit-scrollbar-track {
+  background: transparent;
+  width: var(--ui-kit-base-unit);
+  margin-top: var(--ui-kit-space-1);
+  margin-bottom: var(--ui-kit-space-1);
+}
+
+.scrollContainer::-webkit-scrollbar-thumb {
+  border-radius: var(--ui-kit-border-radius);
+  background: var(--ui-kit-color-typography-quaternary);
+  visibility: hidden;
+}
+
+.scrollContainer:hover::-webkit-scrollbar-thumb,
+.scrollContainer:focus::-webkit-scrollbar-thumb,
+.scrollContainer:focus-within::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+
+.scrollableContainer {
+  height: 50%;
+}
+
+
+.chatContainer {
+  box-sizing: border-box;
+  border: var(--ui-kit-border-standard);
+  border-radius: var(--ui-kit-border-radius-standard);
+  padding: var(--ui-kit-space-1);
+  height: 400px; /* Example fixed height for demonstration, adjust as needed */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack children vertically */
+}
+
+.scrollableContent {
+  flex-grow: 1; /* Allows the scrollable area to take up available space */
+  overflow-y: auto;
+  padding-top: var(--ui-kit-space-2);
+  padding-right: var(--ui-kit-space-2);
+  padding-bottom: var(--ui-kit-space-2);
+  /* Scrollbar styles from your original .scrollContainer */
+  scrollbar-width: thin;
+  scrollbar-color: var(--ui-kit-color-typography-quaternary) transparent;
+}
+
+.scrollableContent::-webkit-scrollbar {
+  position: absolute;
+  width: var(--ui-kit-base-unit);
+  height: 0;
+}
+
+.scrollableContent::-webkit-scrollbar-track {
+  background: transparent;
+  width: var(--ui-kit-base-unit);
+  margin-top: var(--ui-kit-space-1);
+  margin-bottom: var(--ui-kit-space-1);
+}
+
+.scrollableContent::-webkit-scrollbar-thumb {
+  border-radius: var(--ui-kit-border-radius);
+  background: var(--ui-kit-color-typography-quaternary);
+  visibility: hidden;
+}
+
+.scrollableContent:hover::-webkit-scrollbar-thumb,
+.scrollableContent:focus::-webkit-scrollbar-thumb,
+.scrollableContent:focus-within::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+
+
+.inputArea {
+  display: flex;
+  gap: var(--ui-kit-space-1); /* Space between input and button */
+  padding-top: var(--ui-kit-space-1); /* Add some padding above the input area */
+  border-top: var(--ui-kit-border-standard); /* A subtle separator */
+  margin-top: var(--ui-kit-space-1); /* Space above the border */
+}
+
+/* Chat bubble specific styles */
+.chatBubble {
+  max-width: 80%; /* Limit bubble width */
+  margin-bottom: var(--ui-kit-space-1);
+}
+
+.userBubble {
+  background-color: var(--ui-kit-color-primary-low); /* A lighter primary color for user messages */
+  color: var(--ui-kit-color-primary-fore);
+  border-bottom-right-radius: 0; /* Make one corner less rounded for a "tail" effect */
+}
+
+.botBubble {
+  background-color: var(--ui-kit-color-secondary-low); /* A different color for bot messages */
+  color: var(--ui-kit-color-secondary-fore);
+  border-bottom-left-radius: 0; /* Make one corner less rounded for a "tail" effect */
+}
